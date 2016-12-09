@@ -1,50 +1,57 @@
 'use strict'
 
+// PLAYED FUNCTION
+var play = function(key) {
+    console.log(key + " was played");
+}
+
+// CREATE CLICK LISTENERS
 var buttons = document.getElementsByClassName('key');
 
 for (var i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function() {
-        console.log(this.childNodes[3].innerText);
+        play(this.childNodes[3].innerText);
     });
 }
 
+// CREATE KEY LISTENERS
 window.addEventListener("keydown", function (event) {
     switch(event.key) {
         case "a":
         case "A":
-            console.log("A pressed");
+            play("Clap");
             break;
         case "s":
         case "S":
-            console.log("S pressed");
+            play("HiHat");
             break;
         case "d":
         case "D":
-            console.log("D pressed");
+            play("Kick");
             break;          
         case "f":
         case "F":
-            console.log("F pressed");
+            play("OpenHat");
             break;
         case "g":
         case "G":
-            console.log("G pressed");
+            play("Boom");
             break;
         case "h":
         case "H":
-            console.log("H pressed");
+            play("Ride");
             break; 
         case "j":
         case "J":
-            console.log("J pressed");
+            play("Snare");
             break;
         case "k":
         case "K":
-            console.log("K pressed");
+            play("Tom");
             break;
         case "l":
         case "L":
-            console.log("L pressed");
+            play("Tink");
             break; 
         default:
             break;
