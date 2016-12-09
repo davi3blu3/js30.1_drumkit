@@ -2,7 +2,8 @@
 
 // PLAYED FUNCTION
 var play = function(key) {
-    console.log(key + " was played");
+    var btn = document.getElementById(key);
+    btn.className += " playing";
 }
 
 // CREATE CLICK LISTENERS
