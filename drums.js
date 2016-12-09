@@ -17,41 +17,32 @@ for (var i = 0; i < buttons.length; i++) {
 
 // CREATE KEY LISTENERS
 window.addEventListener("keydown", function (event) {
-    switch(event.key) {
-        case "a":
-        case "A":
+    switch(event.keyCode) {
+        case 65:
             play("Clap");
             break;
-        case "s":
-        case "S":
+        case 83:
             play("HiHat");
             break;
-        case "d":
-        case "D":
+        case 68:
             play("Kick");
             break;          
-        case "f":
-        case "F":
+        case 70:
             play("OpenHat");
             break;
-        case "g":
-        case "G":
+        case 71:
             play("Boom");
             break;
-        case "h":
-        case "H":
+        case 72:
             play("Ride");
             break; 
-        case "j":
-        case "J":
+        case 74:
             play("Snare");
             break;
-        case "k":
-        case "K":
+        case 75:
             play("Tom");
             break;
-        case "l":
-        case "L":
+        case 76:
             play("Tink");
             break; 
         default:
