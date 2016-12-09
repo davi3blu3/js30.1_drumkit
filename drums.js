@@ -1,9 +1,12 @@
 'use strict'
 
 // PLAYED FUNCTION
-var play = function(key) {
-    var btn = document.getElementById(key);
+var play = function(drum) {
+    var btn = document.getElementById(drum);
+    var sound = document.querySelector(`audio[data-key="${drum}"]`);
     btn.classList.add('playing');
+    sound.currentTime = 0;
+    sound.play();
 }
 
 // REMOVE TRANSITION FUNCTION
@@ -18,39 +21,38 @@ buttons.forEach(button => button.addEventListener('click', function() {
     play(button.childNodes[3].innerText);
 }));
 buttons.forEach(button => button.addEventListener('transitionend', removeTransition));
+
 // CREATE KEYDOWN LISTENER IN WINDOW
 window.addEventListener("keydown", function (event) {
     switch(event.keyCode) {
         case 65:
-            play("Clap");
+            play("clap");
             break;
         case 83:
-            play("HiHat");
+            play("hihat");
             break;
         case 68:
-            play("Kick");
+            play("kick");
             break;          
         case 70:
-            play("OpenHat");
+            play("openhat");
             break;
         case 71:
-            play("Boom");
+            play("boom");
             break;
         case 72:
-            play("Ride");
+            play("ride");
             break; 
         case 74:
-            play("Snare");
+            play("snare");
             break;
         case 75:
-            play("Tom");
+            play("tom");
             break;
         case 76:
-            play("Tink");
+            play("tink");
             break; 
         default:
             break;
     }
 });
-
-
