@@ -1,0 +1,10 @@
+.key {
+    width: 100px;
+    padding: 0;
+    background-color: rgba(0,0,0,0.4);
+    border: 4px solid black;
+    border-radius: 10px;
+    color: aquamarine;
+    text-align: center;
+    display: inline-block;
+}
