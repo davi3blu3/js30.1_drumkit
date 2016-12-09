@@ -1,5 +1,11 @@
 body {
     margin: 0;
+    background-color: rgba(0,0,0,0.2);
+}
+
+kbd {
+    font-size: 44px;
+    color: black;
 }
 
 .keyRow {
@@ -12,15 +18,25 @@ body {
     width: 100px;
     margin: 0 auto;
     display: inline-block;
-    background-color: rgba(0,0,0,0.4);
+    
     border: 3px solid black;
     border-radius: 10px;
-    color: aquamarine;
+    color: darkviolet;
     text-align: center;
-    transition: all 0.07s;
+    transition: all 0.15s;
 }
 
 .playing {
-    transform: scale(1.1);
-    background-color: peru;
+    transform: scale(1.2);
+    background-color: rgba(5,5,0,0.3);
+    border-color: gold;
+    box-shadow: 0 0 10px gold;
+}
+
+.playing kbd {
+    color: gold;
+}
+
+.playing p {
+    color: gold;
 }
