@@ -3,19 +3,22 @@
 // PLAYED FUNCTION
 var play = function(key) {
     var btn = document.getElementById(key);
-    btn.className += " playing";
+    btn.classList.add('playing');
 }
 
-// CREATE CLICK LISTENERS
-var buttons = document.getElementsByClassName('key');
+// REMOVE TRANSITION FUNCTION
+var removeTransition = function(e) {
+    if (e.propertyName !== 'transform') return; // skip if not transform
+    this.classList.remove('playing');
+};
 
-for (var i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', function() {
-        play(this.childNodes[3].innerText);
-    });
-}
-
-// CREATE KEY LISTENERS
+// CREATE CLICK and TRANSITION END LISTENERS FOR EACH BUTTON
+const buttons = document.querySelectorAll('.key');
+buttons.forEach(button => button.addEventListener('click', function() {
+    play(button.childNodes[3].innerText);
+}));
+buttons.forEach(button => button.addEventListener('transitionend', removeTransition));
+// CREATE KEYDOWN LISTENER IN WINDOW
 window.addEventListener("keydown", function (event) {
     switch(event.keyCode) {
         case 65:
